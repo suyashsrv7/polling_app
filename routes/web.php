@@ -11,12 +11,17 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('index');
 });
 
 Route::post('/register',['uses'=>'RegistrationController@register','as'=>'register']);
 Route::post('/check_duplicate_entry','RegistrationController@duplicate');
-Route::get('/dashboard',function(){
+Route::get('/login',function(){
+    return view('login');
+});
+Route::post('/login',['uses'=>'LoginController@login']);
+Route::get('/logout',['uses'=>'LoginController@logout']);
+Route::get('/dashboard' ,function(){
     return view('dashboard');
 });

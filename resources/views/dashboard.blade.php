@@ -1,1 +1,1 @@
-<h4>Registration successfull</h4>
+<h4>Welcome User</h4>

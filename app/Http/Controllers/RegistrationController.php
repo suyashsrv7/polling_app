@@ -16,7 +16,7 @@ class RegistrationController extends Controller
         $user->username = $request->username;
         $user->password = Hash::make($request->password);
         $user->save();
-        return view('dashboard');
+        return response()->json(['status'=>'1']);
 
     }
 

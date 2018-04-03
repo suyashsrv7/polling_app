@@ -89,6 +89,8 @@ $(document).ready(function(){
                 return check_duplicate_entry('username' , username);
             }
             else{
+                $('#err_username').text("Invalid username");
+                $('#err_username').show();
                 return false;
             }
         }
@@ -162,8 +164,9 @@ $(document).ready(function(){
                 cache:false,
                 datatype:'json',
                 success:function(response){
-                    if(response){
-                        window.location.href='/dashboard';
+                    console.log(response);
+                    if(response.status == '1'){
+                        window.location.href='/login';
                     }
                     else{
                         console.log(response);
